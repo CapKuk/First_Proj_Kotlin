@@ -1,9 +1,6 @@
-import java.lang.Exception
-import java.lang.NullPointerException
-
 fun main() {
     print("Введите город, в котором вы живете: ")
-    val city = readLine() ?: getCity()
+    val city = getCity()
     print("Какая у вас погода? ")
     val message = when(readLine()?.toIntOrNull() ?: getTemp()){
         in -50..15 -> "холодно"
@@ -14,11 +11,16 @@ fun main() {
     print("В городе $city сейчас $message")
 }
 fun getCity() : String{
-    print("Введена строка с ошибкой ")
-    return  readLine() ?: getCity()
+    val city = readLine()
+    if(city == null || city == "")
+    {
+        print("Введена строка с ошибкой. Город должен иметь название. Введите еще раз: ")
+        return getCity()
+    }
+    return city
 }
 fun getTemp() : Int{
-    print("Введена строка с ошибкой ")
+    print("Введена строка с ошибкой. Погода должна записываться числом. ")
     return  readLine()?.toIntOrNull() ?: getTemp()
 }
 
