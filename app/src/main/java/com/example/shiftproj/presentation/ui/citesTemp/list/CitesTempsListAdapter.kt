@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shiftproj.model.entity.CityTemp
 import com.example.shiftproj.R
-import kotlinx.android.synthetic.main.item_note.view.*
+import kotlinx.android.synthetic.main.item_city_temp.view.*
 
 class CitesTempsListAdapter : RecyclerView.Adapter<CitesTempsListAdapter.ViewHolder>() {
 
@@ -36,7 +36,7 @@ class CitesTempsListAdapter : RecyclerView.Adapter<CitesTempsListAdapter.ViewHol
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_city_temp, parent, false)
         return ViewHolder(
             view,
             noteListener

@@ -5,30 +5,28 @@ import com.example.shiftproj.model.entity.CityTemp
 class MockDataStore : IDataStore<CityTemp> {
 
     private var citesTemps = arrayListOf(
-        CityTemp("Новосибирск", 30, 1),
-        CityTemp("Питер", 18, 2),
-        CityTemp("Москва", 18, 3),
-        CityTemp("Бердск", 29, 4),
-        CityTemp("Самара", 25, 5))
+        CityTemp("Новосибирск", 30.0, 1),
+        CityTemp("Питер", 18.0, 2),
+        CityTemp("Москва", 18.0, 3),
+        CityTemp("Бердск", 29.0, 4),
+        CityTemp("Самара", 25.0, 5))
 
     override fun getAll() : List<CityTemp>? {
         return citesTemps
     }
 
     override fun get(id: Int): CityTemp? {
-        var lookedItem : CityTemp? = null
         citesTemps.forEach { if(it.id == id){
-            lookedItem = it
+            return it
         } }
-        return lookedItem
+        return null
     }
 
     override fun get(name: String): CityTemp? {
-        var lookedItem : CityTemp? = null
         citesTemps.forEach { if(it.city == name){
-            lookedItem = it
+            return it
         } }
-        return lookedItem
+        return null
     }
 
     override fun add(item: CityTemp) {

@@ -9,7 +9,7 @@ import com.example.shiftproj.model.entity.CityTemp
 import com.example.shiftproj.presentation.presenters.city_temp.list.CitesTempsListPresenter
 import com.example.shiftproj.presentation.ui.citesTemp.add.AddCityTempActivity
 import com.example.shiftproj.presentation.ui.citesTemp.CitesTempsDetailActivity
-import kotlinx.android.synthetic.main.note_list_activity.*
+import kotlinx.android.synthetic.main.city_temp_list_activity.*
 
 class CitesTempsListActivity : AppCompatActivity(), CitesTempListView {
     private val adapter = CitesTempsListAdapter()
@@ -17,7 +17,7 @@ class CitesTempsListActivity : AppCompatActivity(), CitesTempListView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.note_list_activity)
+        setContentView(R.layout.city_temp_list_activity)
 
         presenter.attachView(this)
 
