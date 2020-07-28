@@ -1,8 +1,10 @@
-package com.example.shiftproj
+package com.example.shiftproj.presentation.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.shiftproj.presentation.ui.citesTemp.list.CitesTempsListActivity
+import com.example.shiftproj.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener{
-            val intent = Intent(this, NoteListActivity::class.java)
+            val intent = Intent(this, CitesTempsListActivity::class.java)
             startActivity(intent)
         }
 
