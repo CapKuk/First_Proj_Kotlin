@@ -13,8 +13,11 @@ class CitesTempsListAdapter : RecyclerView.Adapter<CitesTempsListAdapter.ViewHol
     private val cityTempList : MutableList<CityTemp> = mutableListOf()
     private var noteListener : NoteListener? = null
 
-    fun setCitesTempList(newList : List<CityTemp>){
+    fun setCitesTempList(newList : List<CityTemp>?){
         cityTempList.clear()
+        if(newList == null){
+            return
+        }
         cityTempList.addAll(newList)
 
         notifyDataSetChanged()

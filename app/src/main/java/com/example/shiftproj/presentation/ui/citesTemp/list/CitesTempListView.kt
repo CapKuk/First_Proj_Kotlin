@@ -5,7 +5,7 @@ import com.example.shiftproj.presentation.ui.ViewContract
 
 interface CitesTempListView : ViewContract {
 
-    fun setCitesTempsList(cites_temps: List<CityTemp>)
+    fun setCitesTempsList(cites_temps: List<CityTemp>?)
 
     fun showCitesTempsDetails(cites_temps: CityTemp)
 

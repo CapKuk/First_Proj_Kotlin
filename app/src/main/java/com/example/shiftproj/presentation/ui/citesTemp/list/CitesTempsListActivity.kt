@@ -36,7 +36,7 @@ class CitesTempsListActivity : AppCompatActivity(), CitesTempListView {
         recycler_view.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
     }
 
-    override fun setCitesTempsList(cites_temps: List<CityTemp>) {
+    override fun setCitesTempsList(cites_temps: List<CityTemp>?) {
         adapter.setCitesTempList(cites_temps)
     }
 
