@@ -15,6 +15,7 @@ buildscript {
     }
 }
 
+
 allprojects {
     repositories {
         google()
@@ -22,7 +23,7 @@ allprojects {
         
     }
 }
-
-tasks clean(type: Delete) {
+task customCleanUp(type: Delete) {
     delete rootProject.buildDir
 }
+tasks.clean.dependsOn(tasks.customCleanUp)
