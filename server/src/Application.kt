@@ -49,13 +49,14 @@ fun Application.module(testing: Boolean = false) {
     routing {
         route ("/temps") {
             get{
-                val cityTemps = repos.getAll()
-                if(cityTemps != null){
-                    call.respond(cityTemps)
-                }
-                else{
-                    call.respondText("Empty list")
-                }
+                call.respondText("Empty list")
+                //val cityTemps = repos.getAll()
+                //if(cityTemps != null){
+                //    call.respond(cityTemps)
+                //}
+                //else{
+                //    call.respondText("Empty list")
+                //}
             }
             post{
                 val cityTemp = call.receive<CityTemp>()
@@ -71,10 +72,6 @@ fun Application.module(testing: Boolean = false) {
                     call.respond(HttpStatusCode.OK)
                 }
             }
-        }
-
-        get("/json/gson") {
-            call.respond(mapOf("hello" to "world"))
         }
     }
 }
