@@ -49,14 +49,16 @@ fun Application.module(testing: Boolean = false) {
     routing {
         route ("/temps") {
             get{
-                call.respondText("Empty list")
-                //val cityTemps = repos.getAll()
-                //if(cityTemps != null){
-                //    call.respond(cityTemps)
-                //}
-                //else{
-                //    call.respondText("Empty list")
-                //}
+                //call.respondText("Empty list")
+                repos.add(CityTemp("NSK", 100, -1))
+                repos.add(CityTemp("NSK1", 100, -2))
+                val cityTemps = repos.getAll()
+                if(cityTemps != null){
+                    call.respond(cityTemps)
+                }
+                else{
+                    call.respondText("Empty list")
+                }
             }
             post{
                 val cityTemp = call.receive<CityTemp>()
