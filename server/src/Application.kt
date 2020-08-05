@@ -50,14 +50,16 @@ fun Application.module(testing: Boolean = false) {
         route ("/temps") {
             get{
                 //call.respondText("Empty list")
-                repos.add(CityTemp("NSK", 100, -1))
-                repos.add(CityTemp("NSK1", 100, -2))
                 val cityTemps = repos.getAll()
                 if(cityTemps != null){
-                    call.respond(cityTemps)
+                    if(cityTemps.isNotEmpty()){
+                        call.respond(cityTemps)
+                    } else{
+                        call.respond(HttpStatusCode.NoContent)
+                    }
                 }
                 else{
-                    call.respondText("Empty list")
+                    call.respond(HttpStatusCode.NotFound)
                 }
             }
             post{
