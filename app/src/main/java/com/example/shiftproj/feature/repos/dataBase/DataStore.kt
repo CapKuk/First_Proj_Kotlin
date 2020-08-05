@@ -26,6 +26,18 @@ class DataStore : IDataStore<CityTemp> {
     }
 
     override suspend fun getAll(): List<CityTemp>? {
+        val baseUrl = "https://shift-wether-app.herokuapp.com/"
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        val client = OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .build()
+        val retrofit = Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
+        api = retrofit.create(CitiesTempAPI::class.java)
         return api?.getAll()
     }
 
