@@ -4,7 +4,7 @@ import com.example.common.CityTemp
 
 object DataBaseRepos : IDataStore<CityTemp> {
 
-    private val dataStore : IDataStore<CityTemp> = MockDataStore()
+    private val dataStore : IDataStore<CityTemp> = DataStore()
 
     override suspend fun getAll(): List<CityTemp>? = dataStore.getAll()
     override fun get(name: String): CityTemp? = dataStore.get(name)

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
-//import androidx.lifecycle.viewModelScope
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shiftproj.R
 import com.example.shiftproj.feature.cityTemp.list.presentation.CitesTempsListActivity
