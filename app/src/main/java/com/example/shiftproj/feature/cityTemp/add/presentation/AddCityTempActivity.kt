@@ -41,7 +41,7 @@ class AddCityTempActivity : AppCompatActivity(),
         toast.show()
     }
 
-    override fun onAddButtonClick(city: String, temp: Double) {
+    override fun onAddButtonClick(city: String, temp: Long) {
         val intent = Intent(this, CitesTempsListActivity::class.java)
         intent.putExtra("Notes", CityTemp(city, temp))
         startActivity(intent)

@@ -7,7 +7,7 @@ class TempGetterMock : IGetTemp {
     override fun isRealCity(city: String): Boolean {
         return true
     }
-    override fun getTemp(city : String): Double {
-        return Random.nextInt(60) - 30 + ((Random.nextDouble() * 100.0).roundToInt() / 100.0)
+    override fun getTemp(city : String): Long {
+        return Random.nextLong(60) - 30
     }
 }
