@@ -11,7 +11,7 @@ class DataStore : IDataStore<CityTemp> {
     private var api : CitiesTempAPI? = null
 
     init {
-        val baseUrl : String = ""
+        val baseUrl = "https://shift-wether-app.herokuapp.com/"
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder()
