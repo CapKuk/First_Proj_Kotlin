@@ -1,10 +1,10 @@
 package com.example.shiftproj.feature.hello.presentation
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.shiftproj.feature.cityTemp.list.presentation.CitesTempsListActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shiftproj.R
+import com.example.shiftproj.feature.cityTemp.list.presentation.CitesTempsListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HelloActivity : AppCompatActivity() {

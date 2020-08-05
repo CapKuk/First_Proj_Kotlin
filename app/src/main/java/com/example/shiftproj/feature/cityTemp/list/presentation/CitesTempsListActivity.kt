@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shiftproj.R
-import com.example.shiftproj.feature.cityTemp.domain.entity.CityTemp
 import com.example.shiftproj.feature.cityTemp.add.presentation.AddCityTempActivity
 import com.example.shiftproj.feature.cityTemp.detail.presentation.CitesTempsDetailActivity
 import kotlinx.android.synthetic.main.city_temp_list_activity.*
+import com.example.common.CityTemp
 
 class CitesTempsListActivity : AppCompatActivity(),
     CitesTempListView {
@@ -21,7 +21,13 @@ class CitesTempsListActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.city_temp_list_activity)
 
-        presenter.attachView(this)
+        viewModelScope.launch {
+            try {
+                presenter.attachView(this)
+            } catch (e: Exception) {
+                // show error
+            }
+        }
 
         val params = intent.getSerializableExtra("Notes") as CityTemp?
         adapter.addItemFromIntent(params)

@@ -1,0 +1,1 @@
+D:\project_C\shiftProj\common\build\classes\kotlin\main\com\example\common\CityTemp.class

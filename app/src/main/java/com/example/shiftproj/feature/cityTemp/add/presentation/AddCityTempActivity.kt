@@ -19,13 +19,13 @@ class AddCityTempActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_city_temp_activity)
-        //viewModelScope.launch {
-        //    try {
-        //        presenter.attachView(this)
-        //    } catch (e: Exception) {
-        //        // show error
-        //    }
-        //}
+        viewModelScope.launch {
+            try {
+                presenter.attachView(this)
+            } catch (e: Exception) {
+                // show error
+            }
+        }
 
         setButton.setOnClickListener {
             presenter.onAddButtonClick(sityTextView.text?.toString())

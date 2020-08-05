@@ -1,7 +1,7 @@
 package com.example.shiftproj.feature.cityTemp.list.presentation
 
-import com.example.shiftproj.feature.cityTemp.domain.entity.CityTemp
 import com.example.shiftproj.feature.util.ViewContract
+import com.example.common.CityTemp
 
 interface CitesTempListView : ViewContract {
 

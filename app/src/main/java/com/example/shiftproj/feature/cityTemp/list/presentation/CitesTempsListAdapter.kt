@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shiftproj.feature.cityTemp.domain.entity.CityTemp
 import com.example.shiftproj.R
+
 import kotlinx.android.synthetic.main.item_city_temp.view.*
+import com.example.common.CityTemp
 
 class CitesTempsListAdapter : RecyclerView.Adapter<CitesTempsListAdapter.ViewHolder>() {
 
