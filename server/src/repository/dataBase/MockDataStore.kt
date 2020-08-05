@@ -9,11 +9,11 @@ class MockDataStore : IDataStore<CityTemp> {
     }
 
     private var citesTemps = arrayListOf(
-        CityTemp("Новосибирск", 30.0F, 1),
-        CityTemp("Питер", 18.0F, 2),
-        CityTemp("Москва", 18.0F, 3),
-        CityTemp("Бердск", 29.0F, 4),
-        CityTemp("Самара", 25.0F, 5)
+        CityTemp("Новосибирск", 30, 1),
+        CityTemp("Питер", 18, 2),
+        CityTemp("Москва", 18, 3),
+        CityTemp("Бердск", 29, 4),
+        CityTemp("Самара", 25, 5)
     )
 
     override suspend fun getAll() : List<CityTemp>? {
