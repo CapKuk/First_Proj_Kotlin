@@ -1,6 +1,6 @@
-package com.example.shiftproj.feature.repos.getTemp
+package com.example.server.repository.getTemp
 
 interface IGetTemp {
     fun isRealCity(city : String) : Boolean
-    fun getTemp(city : String) : Double
+    fun getTemp(city : String) : Long
 }
